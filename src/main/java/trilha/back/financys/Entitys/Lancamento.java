@@ -1,21 +1,28 @@
 package trilha.back.financys.Entitys;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Lancamento {
 
-    int id ;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id ;
     String name;
     String description;
     String type;
     String amount;
     String date;
     Boolean paid;
-    int categoryId;
+    Long categoryId;
 
     public Lancamento(){
 
     }
 
-    public Lancamento(int id, String name, String description, String type, String amount, String date, Boolean paid, int categoryId){
+    public Lancamento(Long id, String name, String description, String type, String amount, String date, Boolean paid, Long categoryId){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -26,7 +33,7 @@ public class Lancamento {
         this.categoryId = categoryId;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -54,11 +61,11 @@ public class Lancamento {
         return paid;
     }
 
-    public int getCategoryId() {
+    public Long getCategoryId() {
         return categoryId;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -86,7 +93,7 @@ public class Lancamento {
         this.paid = paid;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
 

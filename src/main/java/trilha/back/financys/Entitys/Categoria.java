@@ -1,7 +1,15 @@
 package trilha.back.financys.Entitys;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Categoria {
-    int id;
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
     String name;
     String description;
 
@@ -9,13 +17,13 @@ public class Categoria {
 
     }
 
-    public Categoria(int id, String name, String description){
+    public Categoria(Long id, String name, String description){
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -27,7 +35,7 @@ public class Categoria {
         return description;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
