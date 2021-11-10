@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import trilha.back.financys.Entitys.Categoria;
-import trilha.back.financys.Repositories.RepositoryCategoria;
+import trilha.back.financys.Repositories.CategoriaRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,49 +14,48 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/categorias")
-public class controllerCategoria {
+public class CategoriaController {
 
     @Autowired /*injeção de dependência*/
-    private RepositoryCategoria repositoryCategoria;
+    private CategoriaRepository categoriaRepository;
 
     List<Categoria> lista = new ArrayList<>();
 
 
     @GetMapping
-    public ResponseEntity<List<Categoria>> Read(){
+    public ResponseEntity<List<Categoria>> read(){
 
-        return ResponseEntity.ok(repositoryCategoria.findAll());
+        return ResponseEntity.ok(categoriaRepository.findAll());
 
     }
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Object> findById(@PathVariable long id){
 
-        return ResponseEntity.ok(repositoryCategoria.findById(id));
+        return ResponseEntity.ok(categoriaRepository.findById(id));
 
     }
 
     @PostMapping
-    public ResponseEntity<Object> Create(@RequestBody Categoria categoria){
+    public ResponseEntity<Object> create(@RequestBody Categoria categoria){
 
-        return ResponseEntity.ok(repositoryCategoria.save(categoria));
+        return ResponseEntity.ok(categoriaRepository.save(categoria));
 
     }
 
     @PutMapping(path = "/{id}")
-    public Categoria Update(@RequestBody Categoria categoria){
+    public Categoria update(@RequestBody Categoria categoria){
 
-        return repositoryCategoria.save(categoria);
+        return categoriaRepository.save(categoria);
 
     }
 
     @DeleteMapping(path = "/{id}")
-    public void Delete(@RequestBody Categoria categoria){
+    public void delete(@RequestBody Categoria categoria){
 
-        repositoryCategoria.delete(categoria);
+        categoriaRepository.delete(categoria);
 
     }
-
 
 }
 
