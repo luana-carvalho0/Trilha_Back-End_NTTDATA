@@ -6,7 +6,7 @@ import trilha.back.financys.Entitys.Categoria;
 
 
 @Repository
-public interface RepositoryCategoria extends JpaRepository<Categoria, Long> {
+public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
 
 }
