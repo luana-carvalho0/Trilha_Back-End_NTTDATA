@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Categoria {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @OneToMany
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
     String description;
