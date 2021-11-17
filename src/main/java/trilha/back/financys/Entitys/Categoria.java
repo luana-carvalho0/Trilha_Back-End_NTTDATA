@@ -1,14 +1,18 @@
 package trilha.back.financys.Entitys;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Categoria {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @OneToMany
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
     String description;
+    @OneToMany(mappedBy = "categoryId")
+    private List<Lancamento> lancamentos;
 
     public Categoria(){
 
