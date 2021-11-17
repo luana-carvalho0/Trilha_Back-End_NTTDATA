@@ -6,8 +6,7 @@ import java.util.List;
 @Entity
 public class Categoria {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
     String description;
@@ -36,6 +35,10 @@ public class Categoria {
         return description;
     }
 
+    public List<Lancamento> getLancamentos() {
+        return lancamentos;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -46,6 +49,10 @@ public class Categoria {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setLancamentos(List<Lancamento> lancamentos) {
+        this.lancamentos = lancamentos;
     }
 
     public String toString() {
