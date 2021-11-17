@@ -1,6 +1,7 @@
 package trilha.back.financys.Entitys;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Categoria {
@@ -9,6 +10,8 @@ public class Categoria {
     Long id;
     String name;
     String description;
+    @OneToMany(mappedBy = "categoryId")
+    private List<Lancamento> lancamentos;
 
     public Categoria(){
 
@@ -32,6 +35,10 @@ public class Categoria {
         return description;
     }
 
+    public List<Lancamento> getLancamentos() {
+        return lancamentos;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -42,6 +49,10 @@ public class Categoria {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setLancamentos(List<Lancamento> lancamentos) {
+        this.lancamentos = lancamentos;
     }
 
     public String toString() {

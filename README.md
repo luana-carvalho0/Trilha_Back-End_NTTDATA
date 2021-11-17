@@ -204,4 +204,28 @@ outros sistemas via API
 
 </p>
 
+<h3 >
+🎯 Desafio 5<br>
+</h3>
+<p>
+
+a) Defina com suas palavras qual é a responsabilidade das camadas
+vistas até agora, entity, controller, repository e service. (máx 10 linhas)<br>
+
+● Entity: É a camada que contém as entidades, as classes contendo um ou mais
+construtores, atributos e métodos que encapsulam seu comportamento.<br>
+
+● Controller: É a camada responsável tanto por receber requisições
+como por enviar a resposta ao usuário.<br>
+
+● Repository: Anota classes na camada de persistência, que atuará
+como um repositório de banco de dados. Através dela, podemos fazer
+consultas e inserções no banco de dados.<br>
+
+● Service: Faz anotações de classes na camada de serviço. Se
+utiliza uma camada de serviço no meio, entre o controller e o repository, na qual ficam
+as regras de negócio da aplicação.
+
+</p>
+
 

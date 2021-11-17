@@ -1,9 +1,6 @@
 package trilha.back.financys.Entitys;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Lancamento {
@@ -16,13 +13,15 @@ public class Lancamento {
     String amount;
     String date;
     Boolean paid;
-    Long categoryId;
+    @ManyToOne
+    @JoinColumn(name = "categoryId", referencedColumnName = "id")
+    Categoria categoryId;
 
     public Lancamento(){
 
     }
 
-    public Lancamento(Long id, String name, String description, String type, String amount, String date, Boolean paid, Long categoryId){
+    public Lancamento(Long id, String name, String description, String type, String amount, String date, Boolean paid, Categoria categoryId){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -61,7 +60,7 @@ public class Lancamento {
         return paid;
     }
 
-    public Long getCategoryId() {
+    public Categoria getCategoryId() {
         return categoryId;
     }
 
@@ -93,7 +92,7 @@ public class Lancamento {
         this.paid = paid;
     }
 
-    public void setCategoryId(Long categoryId) {
+    public void setCategoryId(Categoria categoryId) {
         this.categoryId = categoryId;
     }
 

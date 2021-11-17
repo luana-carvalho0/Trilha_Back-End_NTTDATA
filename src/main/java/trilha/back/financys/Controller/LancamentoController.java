@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import trilha.back.financys.Entitys.Lancamento;
 import trilha.back.financys.Repositories.CategoriaRepository;
 import trilha.back.financys.Repositories.LancamentoRepository;
+import trilha.back.financys.Service.LancamentoService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +19,14 @@ public class LancamentoController {
     @Autowired /*injeção de dependência*/
     private LancamentoRepository lancamentoRepository;
 
-    List<Lancamento> lista2 = new ArrayList<>();
-
     @Autowired
     private CategoriaRepository categoriaRepository;
+
+    @Autowired
+    private LancamentoService lancamentoService;
+
+    List<Lancamento> lista2 = new ArrayList<>();
+
 
     @GetMapping
     public ResponseEntity<List<Lancamento>> read(){
@@ -42,13 +47,15 @@ public class LancamentoController {
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody Lancamento lancamento){
 
-        if(categoriaRepository.findById(lancamento.getCategoryId()) != null)
+        if(lancamentoService.validateCategoryById(lancamento.getCategoryId())) {
             return ResponseEntity.ok(lancamentoRepository.save(lancamento));
-        else
+        }else{
             System.out.println("Não existe essa categoria");
+        }
 
         return ResponseEntity.ok(HttpStatus.OK);
     }
+
 
     @PutMapping(path = "/{id}")
     public Lancamento update(@RequestBody Lancamento lancamento){
