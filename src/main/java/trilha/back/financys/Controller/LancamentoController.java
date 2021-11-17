@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import trilha.back.financys.Entitys.Lancamento;
 import trilha.back.financys.Repositories.CategoriaRepository;
 import trilha.back.financys.Repositories.LancamentoRepository;
+import trilha.back.financys.Service.CategoriaService;
 import trilha.back.financys.Service.LancamentoService;
 
 import java.util.ArrayList;
@@ -24,6 +25,9 @@ public class LancamentoController {
 
     @Autowired
     private LancamentoService lancamentoService;
+
+    @Autowired
+    private CategoriaService categoriaService;
 
     List<Lancamento> lista2 = new ArrayList<>();
 

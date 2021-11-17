@@ -20,7 +20,7 @@ public class LancamentoService {
 
     public boolean validateCategoryById(Categoria idCategory){
 
-        Optional<Categoria> idcategory = categoriaRepository.findById(idCategory);
+        Optional<Categoria> idcategory = categoriaRepository.findById(idCategory.getId());
 
         if(idcategory.isPresent())
             return true;

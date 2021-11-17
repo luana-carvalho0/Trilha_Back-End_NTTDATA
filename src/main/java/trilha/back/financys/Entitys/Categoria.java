@@ -1,5 +1,7 @@
 package trilha.back.financys.Entitys;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class Categoria {
     Long id;
     String name;
     String description;
+    @JsonIgnore
     @OneToMany(mappedBy = "categoryId")
     private List<Lancamento> lancamentos;
 
