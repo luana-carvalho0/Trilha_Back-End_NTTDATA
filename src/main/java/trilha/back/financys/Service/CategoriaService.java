@@ -14,9 +14,9 @@ public class CategoriaService {
     @Autowired
     private CategoriaRepository categoriaRepository;
 
-    public Long idCategoryByName(String name){
+    public Long idCategoryByName(Categoria name){
 
-        Optional<Categoria> categoriaName = categoriaRepository.findByName(name);
+        Optional<Categoria> categoriaName = categoriaRepository.findByName(name.getName());
 
         if(categoriaName.isPresent())
             return categoriaName.get().getId();

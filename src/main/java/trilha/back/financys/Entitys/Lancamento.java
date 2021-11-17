@@ -1,5 +1,6 @@
 package trilha.back.financys.Entitys;
 
+
 import javax.persistence.*;
 
 @Entity
