@@ -228,4 +228,20 @@ as regras de negócio da aplicação.
 
 </p>
 
+<h3 >
+🎯 Desafio 6<br>
+</h3>
+<p>
+
+a) O que significa DTO, e qual sua importância? (máx 10 linhas)<br>
+
+R:  DTO é um padrão de projetos bastante usado em Java para o 
+transporte de dados entre diferentes componentes de um sistema,
+diferentes instâncias ou processos de um sistema distribuído 
+ou diferentes sistemas via serialização. São classes que ajudam
+a fazer a manipulação dos dados de forma mais segura, 
+encapsulando os objetos e tornando a aplicação mais segura.
+
+</p>
+
 

@@ -1,14 +1,15 @@
-package trilha.back.financys.Controller;
+package trilha.back.financys.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import trilha.back.financys.Entitys.Lancamento;
-import trilha.back.financys.Repositories.CategoriaRepository;
-import trilha.back.financys.Repositories.LancamentoRepository;
-import trilha.back.financys.Service.CategoriaService;
-import trilha.back.financys.Service.LancamentoService;
+import trilha.back.financys.dto.LancamentoDto;
+import trilha.back.financys.entitys.Lancamento;
+import trilha.back.financys.repositories.CategoriaRepository;
+import trilha.back.financys.repositories.LancamentoRepository;
+import trilha.back.financys.service.CategoriaService;
+import trilha.back.financys.service.LancamentoService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +34,10 @@ public class LancamentoController {
 
 
     @GetMapping
-    public ResponseEntity<List<Lancamento>> read(){
+    public ResponseEntity<Object> read(){
 
-        lancamentoRepository.findAll();
-        lista2.sort((o1,o2) -> o1.getDate().compareTo(o2.getDate()));
-        return ResponseEntity.ok(lista2);
+        List<Lancamento> lancamentos = lancamentoRepository.findAll();
+        return ResponseEntity.ok(lancamentoService.agruparLancamentoPorCategoria());
 
     }
 
