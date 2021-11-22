@@ -3,8 +3,6 @@ package trilha.back.financys.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import trilha.back.financys.entitys.Categoria;
 import trilha.back.financys.repositories.CategoriaRepository;
 

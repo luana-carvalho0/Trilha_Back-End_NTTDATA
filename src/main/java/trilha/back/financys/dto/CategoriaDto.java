@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import trilha.back.financys.entitys.Categoria;
-import trilha.back.financys.entitys.Lancamento;
 
 import java.util.List;
 import java.util.stream.Collectors;
