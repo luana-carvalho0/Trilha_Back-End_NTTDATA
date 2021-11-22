@@ -1,4 +1,4 @@
-package trilha.back.financys.Entitys;
+package trilha.back.financys.entitys;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

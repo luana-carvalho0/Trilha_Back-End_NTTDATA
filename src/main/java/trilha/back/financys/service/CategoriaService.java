@@ -1,10 +1,10 @@
-package trilha.back.financys.Service;
+package trilha.back.financys.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import trilha.back.financys.Entitys.Categoria;
-import trilha.back.financys.Repositories.CategoriaRepository;
+import trilha.back.financys.entitys.Categoria;
+import trilha.back.financys.repositories.CategoriaRepository;
 
 import java.util.Optional;
 
