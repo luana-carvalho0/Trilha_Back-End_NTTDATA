@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import trilha.back.financys.entitys.Categoria;
-import trilha.back.financys.entitys.Lancamento;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,7 +16,11 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class CategoriaDto {
 
+    @NotBlank(message = "Campo nome não informado")
+    @Min(value = 3) @Max(value = 15)
     String name;
+    @NotBlank(message = "Campo description não informado")
+    @Min(value = 15) @Max(value = 50)
     String description;
 
     public CategoriaDto(Categoria categoria){
