@@ -9,6 +9,7 @@ import trilha.back.financys.repositories.CategoriaRepository;
 import trilha.back.financys.repositories.LancamentoRepository;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -31,17 +32,25 @@ public class LancamentoService {
 
     }
 
-    public Map<String, List<LancamentoDto>> agruparLancamentoPorCategoria(){
+    public List<List<LancamentoDto>> agruparLancamentoPorCategoria(){
 
         List<Categoria> categorias = categoriaRepository.findAll();
-        Map<String, List<LancamentoDto>> map = new HashMap<>();
 
-        for(Categoria categoria : categorias){
-            String key = "categoria" + categoria.getId().toString();
-            map.put(key, LancamentoDto.convert(categoria.getLancamentos()));
-        }
+        List<List<Lancamento>> lancamentos = new ArrayList<>();
 
-        return map;
+        categorias.stream().map(categoria -> lancamentos.add(categoria.getLancamentos()));
+
+        return lancamentos.stream()
+                         .map(lancamento -> LancamentoDto.convert(lancamento)).collect(Collectors.toList());
+
+        //Map<String, List<LancamentoDto>> map = new HashMap<>();
+
+//        for(Categoria categoria : categorias){
+//            String key = "categoria" + categoria.getId().toString();
+//            map.put(key, LancamentoDto.convert(categoria.getLancamentos()));
+//        }
+//
+//        return map;
     }
 
 }

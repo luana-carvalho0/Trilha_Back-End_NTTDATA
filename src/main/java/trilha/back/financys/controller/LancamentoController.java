@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import trilha.back.financys.dto.LancamentoDto;
 import trilha.back.financys.entitys.Lancamento;
+import trilha.back.financys.mapper.LancamentoMapper;
 import trilha.back.financys.repositories.CategoriaRepository;
 import trilha.back.financys.repositories.LancamentoRepository;
 import trilha.back.financys.service.CategoriaService;
@@ -29,6 +29,9 @@ public class LancamentoController {
 
     @Autowired
     private CategoriaService categoriaService;
+
+    @Autowired
+    private LancamentoMapper lancamentoMapper;
 
     List<Lancamento> lista2 = new ArrayList<>();
 

@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import trilha.back.financys.entitys.Categoria;
 import trilha.back.financys.entitys.Lancamento;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,11 +17,20 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class LancamentoDto {
 
+    @NotBlank(message = "Campo nome não informado")
+    @Min(value = 3) @Max(value = 45)
     String name;
+    @NotBlank(message = "Campo description não informado")
+    @Min(value = 15) @Max(value = 150)
     String description;
+    @NotBlank(message = "Campo type não informado")
+    @Min(value = 3) @Max(value = 10)
     String type;
+    @NotBlank(message = "Campo amount não informado")
     String amount;
+    @NotBlank(message = "Campo date não informado")
     String date;
+    @NotBlank(message = "Campo paid não informado")
     Boolean paid;
     private Categoria categoryId;
 
