@@ -8,7 +8,7 @@ import trilha.back.financys.entitys.Lancamento;
 @Mapper(componentModel = "spring")
 public interface LancamentoMapper {
 
-    LancamentoMapper INSTANCE = Mappers.getMapper(LancamentoMapper.class);
+    //LancamentoMapper INSTANCE = Mappers.getMapper(LancamentoMapper.class);
     LancamentoDto toLancamentoDto (Lancamento lancamento);
 
 }

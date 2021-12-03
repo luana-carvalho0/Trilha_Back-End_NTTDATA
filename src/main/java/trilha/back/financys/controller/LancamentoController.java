@@ -13,6 +13,7 @@ import trilha.back.financys.service.LancamentoService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/lancamentos")
@@ -50,6 +51,15 @@ public class LancamentoController {
         return ResponseEntity.ok(lancamentoRepository.findById(id));
 
     }
+
+    @GetMapping(path = "/{calcula}/{x}/{y}")
+    public ResponseEntity<Integer> calculaMedia(@PathVariable(value = "x") Integer x,
+                                                @PathVariable(value = "y") Integer y){
+
+        return ResponseEntity.ok(lancamentoService.calculaMedia(x,y));
+
+    }
+
 
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody Lancamento lancamento){
