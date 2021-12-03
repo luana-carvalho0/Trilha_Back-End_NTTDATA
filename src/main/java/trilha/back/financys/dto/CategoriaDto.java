@@ -1,5 +1,6 @@
 package trilha.back.financys.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonAutoDetect(getterVisibility= JsonAutoDetect.Visibility.NONE)
 public class CategoriaDto {
 
     @NotBlank(message = "Campo nome não informado")

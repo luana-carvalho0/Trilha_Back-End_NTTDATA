@@ -244,4 +244,40 @@ encapsulando os objetos e tornando a aplicação mais segura.
 
 </p>
 
+<h3 >
+🎯 Desafio 8<br>
+</h3>
+<p>
+
+a) O que são exceptions? (máx 5 linhas)
+
+R: A exceção é um evento não esperado que acontece no sistema em tempo de execução. 
+Quando o sistema acha alguma exceção interrompe o fluxo de código.
+
+b) Qual é o funcionamento do try, catch e finally? (máx 10 linhas)
+
+R: Um bloco try contém comandos que caso ocorra algum erro desviará para os blocos catch correspondentes. 
+Uma cláusula catch contém declarações que especificam o que fazer caso uma exceção seja lançada no bloco try. 
+Caso a exceção não seja esperada no primeiro bloco catch, a execução pula pro próximo bloco catch, se houver. 
+O bloco finally sempre finaliza a sequência de comandos do sistema, independente de ocasionar algum erro no sistema. 
+Esse bloco é opcional, não é obrigatório colocá-lo na sequência try/catch.
+
+c) Qual a relação entre “try, catch e finally” e “throws”? (máx 5 linhas)
+
+R: Todos são usados para tratamento de exceções.
+
+d) Para que serve a annotation @ExceptionHandler? (máx 5 linhas)
+
+R: É uma anotação usada para tratar as exceções específicas e enviar as respostas personalizadas ao cliente.
+
+e) Para que serve o comando throw? (máx 5 linhas)
+
+R: É usado em situações em que não é desejado que uma exceção seja tratada na própria classe ou método, mas sim em outro método que venha lhe chamar. Para isso, utilizamos o comando throws na assinatura do método.
+
+f) Para que serve a annotation @ControllerAdvice? (máx 10 linhas)
+
+R: É usado para tratamento global de erros no aplicativo Spring MVC. Ele também tem controle total sobre o corpo da resposta e o código de status.
+
+</p>
+
 
