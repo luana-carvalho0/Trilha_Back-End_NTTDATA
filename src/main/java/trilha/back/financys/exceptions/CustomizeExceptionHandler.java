@@ -11,13 +11,12 @@ import org.springframework.web.context.request.WebRequest;
 public class CustomizeExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public final ResponseEntity<CalculoException> handleAllExceptions(Exception ex, WebRequest request){
+    public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request){
 
         CalculoException calculoException =
                 new CalculoException(ex.getMessage());
 
-        return new ResponseEntity<>(calculoException, HttpStatus.INTERNAL_SERVER_ERROR);
-
+        return new ResponseEntity<>(calculoException.getMensagemException(), HttpStatus.INTERNAL_SERVER_ERROR);
 
     }
 }
