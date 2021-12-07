@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import trilha.back.financys.dto.CategoriaDto;
 import trilha.back.financys.entitys.Categoria;
 import trilha.back.financys.mapper.CategoriaMapper;
 import trilha.back.financys.repositories.CategoriaRepository;
