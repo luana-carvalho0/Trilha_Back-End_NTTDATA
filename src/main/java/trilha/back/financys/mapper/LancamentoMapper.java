@@ -1,7 +1,6 @@
 package trilha.back.financys.mapper;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 import trilha.back.financys.dto.LancamentoDto;
 import trilha.back.financys.entitys.Lancamento;
 
