@@ -1,8 +1,8 @@
-package trilha.back.financys.repositories;
+package trilha.back.financys.service.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import trilha.back.financys.entitys.Categoria;
-import trilha.back.financys.entitys.Lancamento;
+import trilha.back.financys.model.Categoria;
+import trilha.back.financys.model.Lancamento;
 
 import java.util.Optional;
 

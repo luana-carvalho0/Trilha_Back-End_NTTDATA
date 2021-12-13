@@ -1,13 +1,13 @@
-package trilha.back.financys.controller;
+package trilha.back.financys.service.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import trilha.back.financys.entitys.Categoria;
-import trilha.back.financys.mapper.CategoriaMapper;
-import trilha.back.financys.repositories.CategoriaRepository;
+import trilha.back.financys.model.Categoria;
+import trilha.back.financys.service.mapper.CategoriaMapper;
+import trilha.back.financys.service.repositories.CategoriaRepository;
 
 import java.util.ArrayList;
 import java.util.List;

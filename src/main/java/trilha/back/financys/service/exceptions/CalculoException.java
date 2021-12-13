@@ -1,4 +1,4 @@
-package trilha.back.financys.exceptions;
+package trilha.back.financys.service.exceptions;
 
 public class CalculoException extends RuntimeException{
 

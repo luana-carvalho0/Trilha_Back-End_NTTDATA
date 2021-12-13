@@ -1,8 +1,8 @@
-package trilha.back.financys.mapper;
+package trilha.back.financys.service.mapper;
 
 import org.mapstruct.Mapper;
-import trilha.back.financys.dto.CategoriaDto;
-import trilha.back.financys.entitys.Categoria;
+import trilha.back.financys.model.CategoriaDto;
+import trilha.back.financys.model.Categoria;
 
 @Mapper(componentModel = "spring")
 public interface CategoriaMapper {
