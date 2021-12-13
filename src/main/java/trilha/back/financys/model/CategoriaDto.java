@@ -1,10 +1,10 @@
-package trilha.back.financys.dto;
+package trilha.back.financys.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import trilha.back.financys.entitys.Categoria;
+
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;

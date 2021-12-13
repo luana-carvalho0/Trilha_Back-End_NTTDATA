@@ -1,8 +1,8 @@
-package trilha.back.financys.mapper;
+package trilha.back.financys.service.mapper;
 
 import org.mapstruct.Mapper;
-import trilha.back.financys.dto.LancamentoDto;
-import trilha.back.financys.entitys.Lancamento;
+import trilha.back.financys.model.LancamentoDto;
+import trilha.back.financys.model.Lancamento;
 
 @Mapper(componentModel = "spring")
 public interface LancamentoMapper {

@@ -1,10 +1,8 @@
-package trilha.back.financys.dto;
+package trilha.back.financys.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import trilha.back.financys.entitys.Categoria;
-import trilha.back.financys.entitys.Lancamento;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;

@@ -1,5 +1,7 @@
-package trilha.back.financys.entitys;
+package trilha.back.financys.model;
 
+
+import trilha.back.financys.model.Categoria;
 
 import javax.persistence.*;
 

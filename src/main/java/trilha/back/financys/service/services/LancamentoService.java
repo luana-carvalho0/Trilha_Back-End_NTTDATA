@@ -1,13 +1,13 @@
-package trilha.back.financys.service;
+package trilha.back.financys.service.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import trilha.back.financys.dto.LancamentoDto;
-import trilha.back.financys.entitys.Categoria;
-import trilha.back.financys.entitys.Lancamento;
-import trilha.back.financys.repositories.CategoriaRepository;
-import trilha.back.financys.repositories.LancamentoRepository;
-import trilha.back.financys.exceptions.CalculoException;
+import trilha.back.financys.model.LancamentoDto;
+import trilha.back.financys.model.Categoria;
+import trilha.back.financys.model.Lancamento;
+import trilha.back.financys.service.repositories.CategoriaRepository;
+import trilha.back.financys.service.repositories.LancamentoRepository;
+import trilha.back.financys.service.exceptions.CalculoException;
 
 import java.util.*;
 import java.util.stream.Collectors;
