@@ -9,23 +9,8 @@ import trilha.back.financys.service.repositories.CategoriaRepository;
 import java.util.Optional;
 
 @Service
-public class CategoriaService {
+public interface CategoriaService {
 
-    @Autowired
-    private CategoriaRepository categoriaRepository;
-
-    public Long idCategoryByName(Categoria name){
-
-        Optional<Categoria> categoriaName = categoriaRepository.findByName(name.getName());
-
-        if(categoriaName.isPresent())
-            return categoriaName.get().getId();
-        else
-            System.out.println("Nome não encontrado");
-
-        return categoriaName.get().getId();
-
-
-    }
+    public Long idCategoryByName(Categoria name);
 
 }
