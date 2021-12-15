@@ -357,3 +357,102 @@ manipulação dos dados, já a camada de exception cuida das
 exceções da aplicação.
 
 </p>
+
+<h3 >
+🎯 Desafio 10<br>
+</h3>
+
+<p>
+
+a) O que você entende por Spring Framework?
+
+R: É um framework desenvolvido para o Java baseado em padrões
+de projeto, inversão de controle e injeção de dependência.
+É constituído por diversos módulos capazes de impulsionar e
+melhorar muito nossa aplicação Java.
+
+b) Cite 3 exemplos de ferramentas Spring e suas respectivas finalidades;
+
+R: Spring Data JPA - tem o propósito de fornecer um modelo de programação baseado em Spring para acesso a dados de maneira fácil e sem complicações.
+
+Spring Security - é uma estrutura de autenticação e autorização poderosa e altamente personalizável para proteção de aplicações baseados em Spring Framework.
+
+Spring Web - é utilizado para criar aplicativos Web, incluindo RESTful, utilizando o Spring MVC.
+
+c) Quais ferramentas do Spring foram utilizadas na trilha até o momento?
+
+R: Spring Data JPA e Spring Web.
+
+d) Cite 5 vantagens em utilizar Spring;
+
+Reduz o tempo de desenvolvimento, devido as facilidades de configuração.
+Aumenta a produtividade, já que o desenvolvedor gasta menos tempo nas   configurações de projeto
+Possui um servidor embutido, o Tomcat.
+Arquivo pom.xml bem organizado, pois colocando uma dependência, temos acesso às subdependências. Então, adicionando apenas uma dependência, você tem acesso a várias outras sem ter que colocá-las de fato na sua aplicação.
+Não necessitamos começar uma aplicação do zero, o spring dá todas as configurações iniciais.
+
+e) Descreva os passos de criação de uma Web API Spring boot, com conexão com SQL Server;
+
+R: Primeiro criamos o projeto no site Spring Initializr. Neste projeto, temos um arquivo muito importante, o pom.xml, que contém as dependências que definimos para o nosso projeto. E o arquivo FinancysApplication que contém o main. Vamos criar um pacote para nossas entidades, que conterá os métodos e atributos do nosso objeto. Em seguida criamos nosso repositório, que estende da interface JpaRepository do Spring Data. Esta interface possui métodos para as operações padrão de um CRUD. Aproveitando que definimos o repositório, vamos configurar o banco de dados SQL Server. Esta configuração deve ser definida no arquivo application.properties. Por fim, vamos definir o controller da nossa aplicação. Assim como antes, ele será definido em um sub-package do package padrão da aplicação. Desta maneira teremos uma aplicação com conexão com o SQL Server.
+
+f) Qual a funcionalidade do pom.xml?
+
+R: O arquivo pom.xml contém todas as configurações que o Maven necessita para interagir corretamente com o projeto, ele possui coordenadas, dependências, repositórios, plugins e estratégias de construção do projeto.
+
+g) Qual a funcionalidades do applications.properties?
+
+R: No arquivo das propriedades de aplicação é possível parametrizar muitos aspectos e comportamentos da aplicação.
+
+h) Qual o propósito das Annotations?
+
+R: É um recurso da plataforma Java que fornece o uso de metadata ao longo do código que podem ser interpretadas por um compilador que irá realizar alguma tarefa pré-definida.
+
+i) Cite 10 annotations, com suas respectivas finalidades e descreva ou desenhe um cenário exemplificando a sua utilização
+
+R: @Entity - Declara uma entidade do tipo relacional, como uma tabela, porém é uma classe java.
+
+@Id - Define o identificador da tabela
+
+@SequenceGenerator - Forma de auto incremento de determinado campo.
+
+@Override - É uma anotação de marcador que pode ser usada apenas em métodos. Um método anotado com @Override deve substituir um método de uma superclasse.
+
+@Documented - É uma interface de marcador que informa a uma ferramenta que uma anotação deve ser documentada.
+
+@Mapping - permite definirmos qual atributo da classe será mapeado para outro com nome diferente.
+
+@Autowired - permite fazer uma injeção de dependência em uma classe.
+
+@Controller - é uma anotação comum usada para marcar uma classe como Spring MVC Controller.
+
+@Service faz anotações de classes na camada de serviço.
+
+@Repository anota classes na camada de persistência, que atuará como um repositório de banco de dados.
+
+j) O que é um advice em Spring? Quais os tipos de advice para o Spring?
+
+R: Advice é uma ação realizada por um aspecto em um ponto de junção específico; existem alguns tipos como, before, after, after-returning, after-throwing e around.
+
+
+k) O que é Spring IoC Container?
+
+R: O Spring IoC container busca informações em XML, annotations ou código java sobre como os beans devem ser instanciados, configurados e montados, e como se relacionam com outros beans.
+
+l) Como adicionamos segurança à nossa aplicação Spring?
+
+R: Utilizando o Spring Security, que é um framework do projeto Spring que possui um sistema de autenticação e autorização de alto nível e altamente customizável para aplicações Java.
+
+m) Qual é o pacote Spring responsável pelas conexões com os bancos de dados?
+
+R: Pacote resources.
+
+n) Explique e exemplifique como criar um agendamento de execução de métodos Spring; Cite exemplos de usabilidade
+
+R: Frequentemente temos especificações de aplicações que necessitam realizar tarefas de 
+forma agendada, sejam para geração de relatórios, backups, ou simplesmente para tirar 
+proveito de momentos com menor tráfego de rede para a execução de tarefas que demandem 
+maior necessidade computacional. O Spring Framework fornece abstrações para a execução 
+assíncrona e agendamento de tarefas com as interfaces TaskExecutore TaskScheduler, 
+respectivamente.
+
+</p>
