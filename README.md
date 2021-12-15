@@ -456,3 +456,44 @@ assíncrona e agendamento de tarefas com as interfaces TaskExecutore TaskSchedul
 respectivamente.
 
 </p>
+
+<h3 >
+🎯 Desafio 11<br>
+</h3>
+
+<p>
+
+a) O que são libs quando se trata de código? (máx 3 linhas)
+
+R: São bibliotecas, que é uma coleção de subprogramas usados no desenvolvimento de um software, elas contém código e dados auxiliares, que provém serviços a programas independentes, o que permite o compartilhamento e a alteração de código e dados.
+
+b) Cite 2 libs populares no Java e seu objetivo; (máx 3 linhas)
+
+R: JUnit - Com o Junit podemos criar testes para verificar funcionalidades de classes e seus métodos.
+
+Mockito Core - Usado durante o teste de unidade, isso permitirá que você não gire um ambiente inteiro para o seu teste.
+
+c) Qual é o propósito do Maven, e qual é o seu relacionamento com o arquivo pom.xml? (máx 5 linhas)
+
+R: Maven é uma ferramenta de automação de compilação. O principal objetivo do Maven é facilitar e uniformizar todas as fases de construção de um projeto. auxilia na configuração do projeto, na construção, versionamento e na manutenção. O pom.xml é a unidade fundamental de trabalho no Maven. É um arquivo XML que contém informações sobre o projeto e detalhes de configuração usados ​​pelo Maven para compilar o projeto.
+
+d) Qual é a diferença do Maven para o Gradle? (máx 3 linhas)
+
+R: O Gradle é uma ferramenta mais robusta que o Maven. Os scripts do Gradle são declarativos, de fácil leitura, e expressivo. Escrever o código em Groovy ao invés de XML como fazemos no maven, o tamanho de um script é bem menor e muito mais legível.
+
+e) Com os conhecimentos adquiridos até o agora, realize uma conexão com o desafio 3 onde falamos sobre JDBC, os drivers de comunicação com os bancos de dados.
+
+I. Qual a relação entre os termos lib, driver e JDBC?
+
+R: Podemos dizer que o JDBC é a API que reúne conjuntos de classes e interfaces escritas na linguagem Java na qual possibilita se conectar através de um driver específico do banco de dados desejado. E as libs são as dependências do banco desejado colocadas no arquivo pom.xml. Os Drivers, além de atuar como uma interface entre os SGBDs e as aplicações, também pode ser considerado como um tradutor que ajuda na definição das mensagens binárias trocadas com um protocolo de um SGBD.
+
+II. Como é adicionado uma lib no projeto?
+
+R: Fazendo a importação de pacotes pra dentro do projeto, mas é necessário que a implementação desse pacote esteja em um lugar conhecido. Com o Maven, você não precisa se preocupar em procurar os arquivos jars das bibliotecas para adicioná-los ao classpath do seu projeto. Isso é feito pelo Maven, você só precisa se preocupar em informar o identificador daquela dependência para que ele saiba quem baixar.
+
+III. Escolha um banco de dados (menos o H2) e explique como utilizar o driver de comunicação.
+
+R: No arquivo pom.xml adicionamos as dependências e o driver de comunicação do SQL Server. Precisamos substituir em application.properties as propriedades do banco de dados H2 definidas, pelas propriedades do SQL Server. Configurar o SQL Server na sua máquina.
+
+</p>
+
