@@ -287,46 +287,73 @@ R: É usado para tratamento global de erros no aplicativo Spring MVC. Ele també
 <p>
 a) O que é um padrão de projeto e por que nós os utilizamos? (máx 5 linhas) 
 
-R: São padrões usados para solucionar problemas comuns encontrados no desenvolvimento ou manutenção de um software. São utilizados visando evitar solucionar aqueles problemas comuns que todo desenvolvedor encontra no dia a dia.
+R: São padrões usados para solucionar problemas comuns 
+encontrados no desenvolvimento ou manutenção de um software. 
+São utilizados visando solucionar aqueles problemas comuns
+que todo desenvolvedor encontra no dia a dia.
 
 b) Cite e explique com suas palavras:
 
 i. Um dos padrões de criação;
 
-R: Factory Method, define uma interface para criar objetos, mas deixa que as subclasses decidam que classe instanciar. O Factory Method, permite adiar a criação do objeto a subclasses .
+R: Factory Method, define uma interface para criar objetos, 
+mas deixa que as subclasses decidam que classe instanciar. 
+O Factory Method, permite adiar a criação do objeto a subclasses.
 
 ii. Um dos padrões estruturais;
 
-R: Adapter, converte a interface de uma classe por outra esperada pelos clientes . O que possibilita que classes com interfaces incompatíveis trabalhem em conjunto. Faz exatamente o que um adaptador da vida real faz (pense em um adaptador de tomadas, ele permite que um plug de um formato ligue em outro plug com um formato diferente).
+R: Adapter, converte a interface de uma classe por outra esperada 
+pelos clientes . O que possibilita que classes com interfaces 
+incompatíveis trabalhem em conjunto. Faz exatamente o que um 
+adaptador da vida real faz (pense em um adaptador de tomadas, 
+ele permite que um plug de um formato ligue em outro plug com um
+formato diferente).
 
 iii. Um dos padrões comportamentais;
 
-R: Template Method, define o esqueleto de um algoritmo em um método. O Template Method permite que subclasses redefinam certos passos de um algoritmo sem mudar a estrutura dele.
+R: Template Method, define o esqueleto de um algoritmo em um 
+método. O Template Method permite que subclasses redefinam 
+certos passos de um algoritmo sem mudar a estrutura dele.
 
 c) Explique o conceito de arquitetura de software e seu propósito.
 
-R: Arquitetura de software, resumidamente, é o modelo no qual o sistema deve ser desenvolvido. Ela abrange a forma como suas partes devem ser organizadas, incluindo questões como o comportamento e quais componentes são responsáveis por realizar um conjunto específico de funções. Identifica os principais componentes estruturais de um sistema e os relacionamentos entre eles. O resultado do processo de projeto de arquitetura é um modelo de arquitetura que descreve como o sistema está organizado em um conjunto de componentes de comunicação.
+R: Arquitetura de software, resumidamente, é o modelo no qual o 
+sistema deve ser desenvolvido. Ela abrange a forma como suas 
+partes devem ser organizadas, incluindo questões como o 
+comportamento e quais componentes são responsáveis por realizar 
+um conjunto específico de funções. Identifica os principais 
+componentes estruturais de um sistema e os relacionamentos entre 
+eles. O resultado do processo de projeto de arquitetura é um modelo 
+de arquitetura que descreve como o sistema está organizado em um 
+conjunto de componentes de comunicação.
 
 i. Qual arquitetura estamos seguindo até o momento? Justifique sua resposta. (máx 10 linhas)
 
-R: Arquitetura de camadas(layers), pois os componentes da aplicação estão organizados em camadas de funcionalidades, que podem ser desconstruídas em diferentes serviços.
+R: Arquitetura de camadas(layers), pois os componentes da aplicação
+estão organizados em camadas de funcionalidades, que podem ser 
+desconstruídas em diferentes serviços.
 
 e) O que significa a sigla SOLID?
 
-R: O S.O.L.I.D é um acrônimo que representa cinco princípios da programação orientada a objetos e design de código.
+R: O S.O.L.I.D é um acrônimo que representa cinco princípios da 
+programação orientada a objetos e design de código.
+
 Single Responsibility Principle (Princípio da Responsabilidade Única)
+
 Open/Closed Principle (Princípio do Aberto/Fechado)
+
 Liskov Substitution Principle (Princípio da Substituição de Liskov)
+
 Interface Segregation Principle (Princípio da Segregação de Interfaces)
+
 Dependency Inversion Principle (Princípio da Inversão de Dependências)
 
 f) Quais princípios foram utilizados no projeto até o momento? Explique. (máx 10 linhas)
 
-R: Princípio da Responsabilidade Única, pois cada camada da aplicação tem uma funcionalidade, como as classes repositories, ela tem a função de trabalhar diretamente com o banco na manipulação dos dados, já a camada de exception cuida das exceções da aplicação.
-
-
+R: Princípio da Responsabilidade Única, pois cada camada da 
+aplicação tem uma funcionalidade, como as classes repositories, 
+ela tem a função de trabalhar diretamente com o banco na 
+manipulação dos dados, já a camada de exception cuida das 
+exceções da aplicação.
 
 </p>
-
-
-

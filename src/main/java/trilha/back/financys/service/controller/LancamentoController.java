@@ -5,11 +5,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import trilha.back.financys.model.Lancamento;
+import trilha.back.financys.service.impl.LancamentoServiceImpl;
 import trilha.back.financys.service.mapper.LancamentoMapper;
 import trilha.back.financys.service.repositories.CategoriaRepository;
 import trilha.back.financys.service.repositories.LancamentoRepository;
-import trilha.back.financys.service.services.CategoriaService;
-import trilha.back.financys.service.services.LancamentoService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +24,7 @@ public class LancamentoController {
     private CategoriaRepository categoriaRepository;
 
     @Autowired
-    private LancamentoService lancamentoService;
-
-    @Autowired
-    private CategoriaService categoriaService;
+    private LancamentoServiceImpl lancamentoServiceImpl;
 
     @Autowired
     private LancamentoMapper lancamentoMapper;
@@ -40,7 +36,7 @@ public class LancamentoController {
     public ResponseEntity<Object> read(){
 
         List<Lancamento> lancamentos = lancamentoRepository.findAll();
-        return ResponseEntity.ok(lancamentoService.agruparLancamentoPorCategoria());
+        return ResponseEntity.ok(lancamentoServiceImpl.agruparLancamentoPorCategoria());
 
     }
 
@@ -55,7 +51,7 @@ public class LancamentoController {
     public ResponseEntity<Integer> calculaMedia(@PathVariable(value = "x") Integer x,
                                                 @PathVariable(value = "y") Integer y){
 
-        return ResponseEntity.ok(lancamentoService.calculaMedia(x,y));
+        return ResponseEntity.ok(lancamentoServiceImpl.calculaMedia(x,y));
 
     }
 
@@ -63,7 +59,7 @@ public class LancamentoController {
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody Lancamento lancamento){
 
-        if(lancamentoService.validateCategoryById(lancamento.getCategoryId())) {
+        if(lancamentoServiceImpl.validateCategoryById(lancamento.getCategoryId())) {
             return ResponseEntity.ok(lancamentoRepository.save(lancamento));
         }else{
             System.out.println("Não existe essa categoria");
