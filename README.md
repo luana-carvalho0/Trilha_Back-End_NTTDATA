@@ -444,7 +444,7 @@ R: Utilizando o Spring Security, que é um framework do projeto Spring que possu
 
 m) Qual é o pacote Spring responsável pelas conexões com os bancos de dados?
 
-R: Pacote resources.
+R: JPA.
 
 n) Explique e exemplifique como criar um agendamento de execução de métodos Spring; Cite exemplos de usabilidade
 
