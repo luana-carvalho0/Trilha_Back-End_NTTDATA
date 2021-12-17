@@ -444,7 +444,7 @@ R: Utilizando o Spring Security, que é um framework do projeto Spring que possu
 
 m) Qual é o pacote Spring responsável pelas conexões com os bancos de dados?
 
-R: Pacote resources.
+R: JPA.
 
 n) Explique e exemplifique como criar um agendamento de execução de métodos Spring; Cite exemplos de usabilidade
 
@@ -496,4 +496,29 @@ III. Escolha um banco de dados (menos o H2) e explique como utilizar o driver de
 R: No arquivo pom.xml adicionamos as dependências e o driver de comunicação do SQL Server. Precisamos substituir em application.properties as propriedades do banco de dados H2 definidas, pelas propriedades do SQL Server. Configurar o SQL Server na sua máquina.
 
 </p>
+
+
+<h3 >
+🎯 Desafio 12<br>
+</h3>
+
+<p>
+a) Explique o conceito de teste unitário?
+
+R: É a fase de testes onde cada unidade do sistema é testada individualmente, valida apenas aquilo que está sendo construído ou alterado, normalmente feito pelo desenvolvedor ou de maneira automática.
+
+b) Descreva como fazer um código de teste.
+
+R: O teste deve ser feito em um pacote a parte, mais especificamente no pacote test, no caminho src/test/java; criamos uma classe dentro desse pacote e anotamos o @SpringBootTest para dizer que essa é uma classe de teste do Spring, anotamos também o @Test no método para garantir que aquele é um método de teste. Este novo teste criado inicialmente falha, já que ainda não temos a implementação da funcionalidade em questão e, em seguida, implementamos a funcionalidade para fazer o teste passar
+
+c) Qual o intuito do teste unitário?
+
+R: Isolar cada parte do sistema para garantir que elas estejam funcionando conforme especificado.
+
+d) Quais são as ferramentas que utilizamos para realizar testes unitários(2 pelo menos).
+
+R: JUnit e Selenium.
+
+</p>
+
 

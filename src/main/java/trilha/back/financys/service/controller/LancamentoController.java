@@ -55,6 +55,20 @@ public class LancamentoController {
 
     }
 
+    @GetMapping(path = "/{filter}")
+    public ResponseEntity<Object> getLancamentosPendentes(
+            @RequestParam(value = "datalancamento", required = false) String datalancamento,
+            @RequestParam(value = "amount", required = false) String amount,
+            @RequestParam(value = "paid", required = false) boolean paid
+
+    ){
+        try {
+            return  ResponseEntity.ok(lancamentoServiceImpl.filter(datalancamento, amount, paid));
+        } catch (Exception e){
+            return ResponseEntity.noContent().build();
+        }
+    }
+
 
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody Lancamento lancamento){
