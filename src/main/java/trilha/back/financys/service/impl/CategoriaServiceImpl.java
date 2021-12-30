@@ -5,11 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import trilha.back.financys.model.Categoria;
 import trilha.back.financys.service.repositories.CategoriaRepository;
+import trilha.back.financys.service.services.CategoriaService;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoriaServiceImpl {
+public class CategoriaServiceImpl implements CategoriaService {
 
     @Autowired
     private CategoriaRepository categoriaRepository;
@@ -25,6 +27,36 @@ public class CategoriaServiceImpl {
 
         return categoriaName.get().getId();
 
+
+    }
+
+    @Override
+    public List<Categoria> read(){
+        return categoriaRepository.findAll();
+    }
+
+
+    @Override
+    public Optional<Categoria> findById(Long id){
+
+        return categoriaRepository.findById(id);
+
+    }
+
+    @Override
+    public Categoria create(Categoria categoria){
+        return categoriaRepository.save(categoria);
+    }
+
+    @Override
+    public Categoria update(Categoria categoria){
+        return categoriaRepository.save(categoria);
+    }
+
+    @Override
+    public void delete(Categoria categoria){
+
+        categoriaRepository.delete(categoria);
 
     }
 

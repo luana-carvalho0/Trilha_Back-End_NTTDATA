@@ -2,15 +2,18 @@ package trilha.back.financys.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import trilha.back.financys.model.LancamentoDto;
 import trilha.back.financys.model.Categoria;
 import trilha.back.financys.model.Lancamento;
+import trilha.back.financys.model.LancamentoSalvarDto;
+import trilha.back.financys.model.SomaTotalDto;
+import trilha.back.financys.service.exceptions.CalculoException;
+import trilha.back.financys.service.mapper.LancamentoMapper;
 import trilha.back.financys.service.repositories.CategoriaRepository;
 import trilha.back.financys.service.repositories.LancamentoRepository;
-import trilha.back.financys.service.exceptions.CalculoException;
 import trilha.back.financys.service.services.LancamentoService;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -23,9 +26,17 @@ public class LancamentoServiceImpl implements LancamentoService {
     @Autowired
     private CategoriaRepository categoriaRepository;
 
-    public boolean validateCategoryById(Categoria idCategory){
+    @Autowired
+    private LancamentoMapper mapper;
 
-        Optional<Categoria> idcategory = categoriaRepository.findById(idCategory.getId());
+    @Autowired
+    private LancamentoService lancamentoService;
+
+
+    @Override
+    public boolean validateCategoryById(Long idCategory){
+
+        Optional<Categoria> idcategory = categoriaRepository.findById(idCategory);
 
         if(idcategory.isPresent())
             return true;
@@ -34,27 +45,17 @@ public class LancamentoServiceImpl implements LancamentoService {
 
     }
 
-    public List<List<LancamentoDto>> agruparLancamentoPorCategoria(){
+    @Override
+    public List<SomaTotalDto> agruparLancamentoPorCategoria(){
 
         List<Categoria> categorias = categoriaRepository.findAll();
 
-        List<List<Lancamento>> lancamentos = new ArrayList<>();
-
-        categorias.stream().map(categoria -> lancamentos.add(categoria.getLancamentos()));
-
-        return lancamentos.stream()
-                .map(lancamento -> LancamentoDto.convert(lancamento)).collect(Collectors.toList());
-
-        //Map<String, List<LancamentoDto>> map = new HashMap<>();
-
-//        for(Categoria categoria : categorias){
-//            String key = "categoria" + categoria.getId().toString();
-//            map.put(key, LancamentoDto.convert(categoria.getLancamentos()));
-//        }
-//
-//        return map;
+        return categorias.stream().map(categoria ->
+            new SomaTotalDto(categoria.getName(), categoria.getLancamentos())
+        ).collect(Collectors.toList());
     }
 
+    @Override
     public Integer calculaMedia(Integer x, Integer y) {
         try {
             return (x / y);
@@ -62,5 +63,38 @@ public class LancamentoServiceImpl implements LancamentoService {
             throw new CalculoException("Atenção! Divisor(y) não pode ser zero");
         }
     }
+
+    @Override
+    public Lancamento save(LancamentoSalvarDto dto) {
+        System.out.println(dto);
+        Lancamento lanc = mapper.lancamentoSalvaDtoToLancamento(dto);
+        lanc.setCategoryId(categoriaRepository.findById(dto.getCatId()).get());
+        lancamentoRepository.save(lanc);
+        return lanc;
+    }
+
+    @Override
+    public List<Lancamento> read(){
+
+        return lancamentoRepository.findAll();
+
+    }
+
+    @Override
+    public Optional<Lancamento> findById(Long id){
+
+        return lancamentoRepository.findById(id);
+    }
+
+    @Override
+    public Lancamento update(Lancamento lancamento) {
+        return lancamentoRepository.save(lancamento);
+    }
+
+    @Override
+    public void delete(Lancamento lancamento) {
+        lancamentoRepository.delete(lancamento);
+    }
+
 
 }

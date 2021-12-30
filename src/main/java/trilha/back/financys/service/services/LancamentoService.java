@@ -1,20 +1,29 @@
 package trilha.back.financys.service.services;
 
-import org.springframework.stereotype.Service;
-import trilha.back.financys.model.LancamentoDto;
-import trilha.back.financys.model.Categoria;
+import trilha.back.financys.model.Lancamento;
+import trilha.back.financys.model.LancamentoSalvarDto;
+import trilha.back.financys.model.SomaTotalDto;
+
+import java.util.List;
+import java.util.Optional;
 
 
-import java.util.*;
-
-
-
-@Service
 public interface LancamentoService {
 
-    public boolean validateCategoryById(Categoria idCategory);
+    boolean validateCategoryById(Long idCategory);
 
-    public List<List<LancamentoDto>> agruparLancamentoPorCategoria();
-    public Integer calculaMedia(Integer x, Integer y);
+    List<SomaTotalDto> agruparLancamentoPorCategoria();
+
+    Integer calculaMedia(Integer x, Integer y);
+
+    Lancamento save(LancamentoSalvarDto dto);
+
+    List<Lancamento> read();
+
+    Optional<Lancamento> findById(Long id);
+
+    Lancamento update(Lancamento lancamento);
+
+    void delete(Lancamento lancamento);
 
 }

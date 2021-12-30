@@ -3,11 +3,9 @@ package trilha.back.financys.service.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import trilha.back.financys.model.Categoria;
 import trilha.back.financys.service.mapper.CategoriaMapper;
-import trilha.back.financys.service.repositories.CategoriaRepository;
+import trilha.back.financys.service.services.CategoriaService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +16,7 @@ import java.util.List;
 public class CategoriaController {
 
     @Autowired /*injeção de dependência*/
-    private CategoriaRepository categoriaRepository;
+    private CategoriaService categoriaService;
 
     @Autowired
     private CategoriaMapper categoriaMapper;
@@ -29,21 +27,21 @@ public class CategoriaController {
     @GetMapping
     public ResponseEntity<List<Categoria>> read(){
 
-        return ResponseEntity.ok(categoriaRepository.findAll());
+        return ResponseEntity.ok(categoriaService.read());
 
     }
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Object> findById(@PathVariable long id){
 
-        return ResponseEntity.ok(categoriaRepository.findById(id));
+        return ResponseEntity.ok(categoriaService.findById(id));
 
     }
 
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody Categoria categoria){
 
-        categoriaRepository.save(categoria);
+        categoriaService.create(categoria);
         return ResponseEntity.ok(categoriaMapper.toCategoriaDto(categoria));
 
     }
@@ -51,14 +49,14 @@ public class CategoriaController {
     @PutMapping(path = "/{id}")
     public Categoria update(@RequestBody Categoria categoria){
 
-        return categoriaRepository.save(categoria);
+        return categoriaService.update(categoria);
 
     }
 
     @DeleteMapping(path = "/{id}")
     public void delete(@RequestBody Categoria categoria){
 
-        categoriaRepository.delete(categoria);
+        categoriaService.delete(categoria);
 
     }
 
