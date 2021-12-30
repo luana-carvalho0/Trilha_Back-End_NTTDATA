@@ -5,45 +5,34 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import trilha.back.financys.model.Lancamento;
-import trilha.back.financys.service.impl.LancamentoServiceImpl;
+import trilha.back.financys.model.LancamentoSalvarDto;
 import trilha.back.financys.service.mapper.LancamentoMapper;
-import trilha.back.financys.service.repositories.CategoriaRepository;
 import trilha.back.financys.service.repositories.LancamentoRepository;
+import trilha.back.financys.service.services.LancamentoService;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("/lancamentos")
 public class LancamentoController {
 
-    @Autowired /*injeção de dependência*/
-    private LancamentoRepository lancamentoRepository;
-
     @Autowired
-    private CategoriaRepository categoriaRepository;
-
-    @Autowired
-    private LancamentoServiceImpl lancamentoServiceImpl;
+    private LancamentoService lancamentoService;
 
     @Autowired
     private LancamentoMapper lancamentoMapper;
 
-    List<Lancamento> lista2 = new ArrayList<>();
-
+    @Autowired
+    private LancamentoRepository lancamentoRepository;
 
     @GetMapping
     public ResponseEntity<Object> read(){
-
-        List<Lancamento> lancamentos = lancamentoRepository.findAll();
-        return ResponseEntity.ok(lancamentoServiceImpl.agruparLancamentoPorCategoria());
-
+        return ResponseEntity.ok(lancamentoService.read());
     }
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Object> findById(@PathVariable long id){
 
-        return ResponseEntity.ok(lancamentoRepository.findById(id));
+        return ResponseEntity.ok(lancamentoService.findById(id));
 
     }
 
@@ -51,16 +40,16 @@ public class LancamentoController {
     public ResponseEntity<Integer> calculaMedia(@PathVariable(value = "x") Integer x,
                                                 @PathVariable(value = "y") Integer y){
 
-        return ResponseEntity.ok(lancamentoServiceImpl.calculaMedia(x,y));
+        return ResponseEntity.ok(lancamentoService.calculaMedia(x,y));
 
     }
 
 
     @PostMapping
-    public ResponseEntity<Object> create(@RequestBody Lancamento lancamento){
+    public ResponseEntity<Object> create(@RequestBody LancamentoSalvarDto dto){
 
-        if(lancamentoServiceImpl.validateCategoryById(lancamento.getCategoryId())) {
-            return ResponseEntity.ok(lancamentoRepository.save(lancamento));
+        if(lancamentoService.validateCategoryById(dto.getCatId())) {
+            return ResponseEntity.ok(lancamentoService.save(dto));
         }else{
             System.out.println("Não existe essa categoria");
         }
@@ -72,14 +61,14 @@ public class LancamentoController {
     @PutMapping(path = "/{id}")
     public Lancamento update(@RequestBody Lancamento lancamento){
 
-        return lancamentoRepository.save(lancamento);
+        return lancamentoService.update(lancamento);
 
     }
 
     @DeleteMapping(path = "/{id}")
-    public void Delete(@RequestBody Lancamento lancamento){
+    public void delete(@RequestBody Lancamento lancamento){
 
-        lancamentoRepository.delete(lancamento);
+        lancamentoService.delete(lancamento);
 
     }
 

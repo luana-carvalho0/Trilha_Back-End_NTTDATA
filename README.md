@@ -497,3 +497,7 @@ R: No arquivo pom.xml adicionamos as dependências e o driver de comunicação d
 
 </p>
 
+<h1 align="center">
+    <img src="https://ik.imagekit.io/j5g11jplqm5/NTT-Data-Logo_4rrWLwgl_.png?updatedAt=1636466995979">
+</h1>
+
