@@ -497,7 +497,42 @@ R: No arquivo pom.xml adicionamos as dependências e o driver de comunicação d
 
 </p>
 
-<h1 align="center">
-    <img src="https://ik.imagekit.io/j5g11jplqm5/NTT-Data-Logo_4rrWLwgl_.png?updatedAt=1636466995979">
-</h1>
+<h3 >
+🎯 Desafio 12<br>
+</h3>
+
+<p>
+a) Explique o conceito de teste unitário? 
+
+R: É a fase de testes onde cada unidade do sistema é testada individualmente, valida apenas aquilo que está sendo construído ou alterado, normalmente feito pelo desenvolvedor ou de maneira automática.
+
+b) Descreva como fazer um código de teste.
+
+R: O teste deve ser feito em um pacote a parte, mais especificamente no pacote test, no caminho src/test/java; criamos uma classe dentro desse pacote e anotamos o @SpringBootTest para dizer que essa é uma classe de teste do Spring, anotamos também o @Test no método para garantir que aquele é um método de teste. Este novo teste criado inicialmente falha, já que ainda não temos a implementação da funcionalidade em questão e, em seguida, implementamos a funcionalidade para fazer o teste passar
+
+c) Qual o intuito do teste unitário?
+
+R: Isolar cada parte do sistema para garantir que elas estejam funcionando conforme especificado.
+
+d) Quais são as ferramentas que utilizamos para realizar testes unitários(2 pelo menos).
+
+R: JUnit e Selenium.
+
+
+</p>
+
+<h3 >
+🎯 Desafio 13<br>
+</h3>
+
+<p>
+
+<img src="https://ik.imagekit.io/j5g11jplqm5/Captura_de_Tela__53__lsdD-6Fhk.png?updatedAt=1641232733037">
+
+<img src="https://ik.imagekit.io/j5g11jplqm5/Captura_de_Tela__54__PlQn50sMu.png?updatedAt=1641232845661">
+
+<img src="https://ik.imagekit.io/j5g11jplqm5/Captura_de_Tela__55__En1NzMmNq.png?updatedAt=1641232873783">
+
+<img src="https://ik.imagekit.io/j5g11jplqm5/Captura_de_Tela__56__CqeKusUtdiW.png?updatedAt=1641232874073">
+</p>
 
