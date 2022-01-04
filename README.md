@@ -469,7 +469,7 @@ R: São bibliotecas, que é uma coleção de subprogramas usados no desenvolvime
 
 b) Cite 2 libs populares no Java e seu objetivo; (máx 3 linhas)
 
-R: JUnit - Com o Junit podemos criar testes para verificar funcionalidades de classes e seus métodos.
+R: JUnit - Com o Junit podemos criar trilha.back.financys.testes para verificar funcionalidades de classes e seus métodos.
 
 Mockito Core - Usado durante o teste de unidade, isso permitirá que você não gire um ambiente inteiro para o seu teste.
 
@@ -505,7 +505,7 @@ R: No arquivo pom.xml adicionamos as dependências e o driver de comunicação d
 <p>
 a) Explique o conceito de teste unitário?
 
-R: É a fase de testes onde cada unidade do sistema é testada individualmente, valida apenas aquilo que está sendo construído ou alterado, normalmente feito pelo desenvolvedor ou de maneira automática.
+R: É a fase de trilha.back.financys.testes onde cada unidade do sistema é testada individualmente, valida apenas aquilo que está sendo construído ou alterado, normalmente feito pelo desenvolvedor ou de maneira automática.
 
 b) Descreva como fazer um código de teste.
 
@@ -515,9 +515,80 @@ c) Qual o intuito do teste unitário?
 
 R: Isolar cada parte do sistema para garantir que elas estejam funcionando conforme especificado.
 
-d) Quais são as ferramentas que utilizamos para realizar testes unitários(2 pelo menos).
+d) Quais são as ferramentas que utilizamos para realizar trilha.back.financys.testes unitários(2 pelo menos).
 
 R: JUnit e Selenium.
+
+Desenvolva  o  teste  unitário  para  o  método  acima,  digitando  abaixo  todos  stack traces de erros e explique em uma só frase qual o erro
+
+Stack traces
+
+
+org.mockito.exceptions.misusing.UnfinishedStubbingException:
+Unfinished stubbing detected here:
+-> at testes.TrilhaBackTestes.filterTest(TrilhaBackTestes.java:37)
+
+E.g. thenReturn() may be missing.
+Examples of correct stubbing:
+when(mock.isOk()).thenReturn(true);
+when(mock.isOk()).thenThrow(exception);
+doThrow(exception).when(mock).someVoidMethod();
+Hints:
+1. missing thenReturn()
+2. you are trying to stub a final method, which is not supported
+3. you are stubbing the behaviour of another mock inside before 'thenReturn' instruction is completed
+
+
+	at trilha.back.financys.service.impl.LancamentoServiceImpl.filter(LancamentoServiceImpl.java:75)
+
+
+R: Faltou o retorno do mockito, thenReturn após o when.
+
+
+
+org.opentest4j.AssertionFailedError: Expected java.lang.ArithmeticException to be thrown, but nothing was thrown.
+
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:71)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3007)
+	at testes.TrilhaBackTestes.filterTestErro(TrilhaBackTestes.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+
+
+R: O tipo de exceção estava errado, ao invés de usar ArithmeticException eu precisava mudar o tipo para RuntimeException.
+
+
+
+
+org.opentest4j.AssertionFailedError: expected: <Parâmetros com valores errados> but was: <Parametros com valores errados>
+Expected :Parâmetros com valores errados
+Actual   :Parametros com valores errados
+<Click to see difference>
+
+
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+
+
+R: A mensagem de exceção do teste tinha um acento, enquanto a do service não tinha, então deu erro ao comparar as duas.
+
+
+
+java.lang.NullPointerException
+at trilha.back.financys.testes.TestesController.filterLancamentoController(TestesController.java:62)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+R: Era preciso “startar” o MockMvc, por isso estava dando erro de NullPointer.
+
 
 </p>
 

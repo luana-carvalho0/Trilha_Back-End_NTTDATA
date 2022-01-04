@@ -55,7 +55,7 @@ public class LancamentoController {
 
     }
 
-    @GetMapping(path = "/{filter}")
+    @GetMapping(path = "/filter")
     public ResponseEntity<Object> getLancamentosPendentes(
             @RequestParam(value = "datalancamento", required = false) String datalancamento,
             @RequestParam(value = "amount", required = false) String amount,
