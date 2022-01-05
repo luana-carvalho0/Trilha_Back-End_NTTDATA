@@ -48,9 +48,18 @@ public class CategoriaServiceImpl implements CategoriaService {
         return categoriaRepository.save(categoria);
     }
 
+
     @Override
-    public Categoria update(Categoria categoria){
-        return categoriaRepository.save(categoria);
+    public Categoria atualizarCategoria(Long id, Categoria categoria) {
+        Categoria cat = categoriaRepository.findById(id).get();
+        return categoriaRepository.save(atualizada(cat, categoria));
+
+    }
+
+    public Categoria atualizada(Categoria cat, Categoria categoria) {
+        cat.setName(categoria.getName());
+        cat.setDescription(categoria.getDescription());
+        return cat;
     }
 
     @Override
