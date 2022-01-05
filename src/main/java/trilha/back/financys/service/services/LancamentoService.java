@@ -26,4 +26,6 @@ public interface LancamentoService {
 
     void delete(Lancamento lancamento);
 
+    public List<Lancamento> filter(String lancamento, String amount, boolean paid);
+
 }

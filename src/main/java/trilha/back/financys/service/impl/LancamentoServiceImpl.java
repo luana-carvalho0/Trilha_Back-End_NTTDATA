@@ -96,5 +96,14 @@ public class LancamentoServiceImpl implements LancamentoService {
         lancamentoRepository.delete(lancamento);
     }
 
+    public List<Lancamento> filter(String date, String amount, boolean paid){
+
+        if (date == null || amount == null){
+            throw new RuntimeException("Parametros com valores errados");
+        }
+        List<Lancamento> lancamentos = lancamentoRepository.findAllByDateAndAmountAndPaid(date, amount, paid);
+        return lancamentos;
+    }
+
 
 }
