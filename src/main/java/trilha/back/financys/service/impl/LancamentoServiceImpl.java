@@ -87,8 +87,16 @@ public class LancamentoServiceImpl implements LancamentoService {
     }
 
     @Override
-    public Lancamento update(Lancamento lancamento) {
-        return lancamentoRepository.save(lancamento);
+    public Lancamento atualizarLancamento(Long id, Lancamento lancamento) {
+        Lancamento lanc = lancamentoRepository.findById(id).get();
+        return lancamentoRepository.save(atualizado(lanc, lancamento));
+
+    }
+
+    public Lancamento atualizado(Lancamento lanc, Lancamento lancamento) {
+        lanc.setName(lancamento.getName());
+        lanc.setDescription(lancamento.getDescription());
+        return lanc;
     }
 
     @Override

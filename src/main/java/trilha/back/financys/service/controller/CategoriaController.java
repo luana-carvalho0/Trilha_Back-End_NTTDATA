@@ -7,6 +7,7 @@ import trilha.back.financys.model.Categoria;
 import trilha.back.financys.service.mapper.CategoriaMapper;
 import trilha.back.financys.service.services.CategoriaService;
 
+import javax.xml.ws.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,9 +48,9 @@ public class CategoriaController {
     }
 
     @PutMapping(path = "/{id}")
-    public Categoria update(@RequestBody Categoria categoria){
+    public ResponseEntity<Object> update(@PathVariable Long id, @RequestBody Categoria categoria){
 
-        return categoriaService.update(categoria);
+        return ResponseEntity.ok(categoriaService.atualizarCategoria(id, categoria));
 
     }
 

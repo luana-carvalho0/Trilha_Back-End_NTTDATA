@@ -15,7 +15,8 @@ public interface CategoriaService {
 
     Categoria create(Categoria categoria);
 
-    Categoria update(Categoria categoria);
+
+    Categoria atualizarCategoria(Long id, Categoria categoria);
 
     void delete(Categoria categoria);
 }

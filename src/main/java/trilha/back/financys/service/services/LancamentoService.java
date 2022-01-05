@@ -22,7 +22,7 @@ public interface LancamentoService {
 
     Optional<Lancamento> findById(Long id);
 
-    Lancamento update(Lancamento lancamento);
+    public Lancamento atualizarLancamento(Long id, Lancamento lancamento);
 
     void delete(Lancamento lancamento);
 
