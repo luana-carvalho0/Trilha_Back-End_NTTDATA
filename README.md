@@ -518,6 +518,77 @@ d) Quais são as ferramentas que utilizamos para realizar testes unitários(2 pe
 
 R: JUnit e Selenium.
 
+Desenvolva  o  teste  unitário  para  o  método  acima,  digitando  abaixo  todos  stack traces de erros e explique em uma só frase qual o erro
+
+Stack traces
+
+
+org.mockito.exceptions.misusing.UnfinishedStubbingException:
+Unfinished stubbing detected here:
+-> at testes.TrilhaBackTestes.filterTest(TrilhaBackTestes.java:37)
+
+E.g. thenReturn() may be missing.
+Examples of correct stubbing:
+when(mock.isOk()).thenReturn(true);
+when(mock.isOk()).thenThrow(exception);
+doThrow(exception).when(mock).someVoidMethod();
+Hints:
+1. missing thenReturn()
+2. you are trying to stub a final method, which is not supported
+3. you are stubbing the behaviour of another mock inside before 'thenReturn' instruction is completed
+
+
+	at trilha.back.financys.service.impl.LancamentoServiceImpl.filter(LancamentoServiceImpl.java:75)
+
+
+R: Faltou o retorno do mockito, thenReturn após o when.
+
+
+
+org.opentest4j.AssertionFailedError: Expected java.lang.ArithmeticException to be thrown, but nothing was thrown.
+
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:71)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3007)
+	at testes.TrilhaBackTestes.filterTestErro(TrilhaBackTestes.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+
+
+R: O tipo de exceção estava errado, ao invés de usar ArithmeticException eu precisava mudar o tipo para RuntimeException.
+
+
+
+
+org.opentest4j.AssertionFailedError: expected: <Parâmetros com valores errados> but was: <Parametros com valores errados>
+Expected :Parâmetros com valores errados
+Actual   :Parametros com valores errados
+<Click to see difference>
+
+
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+
+
+R: A mensagem de exceção do teste tinha um acento, enquanto a do service não tinha, então deu erro ao comparar as duas.
+
+
+
+java.lang.NullPointerException
+at trilha.back.financys.testes.TestesController.filterLancamentoController(TestesController.java:62)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+R: Era preciso “startar” o MockMvc, por isso estava dando erro de NullPointer.
+
+
 
 </p>
 
