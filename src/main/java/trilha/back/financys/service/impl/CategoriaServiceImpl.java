@@ -63,8 +63,9 @@ public class CategoriaServiceImpl implements CategoriaService {
     }
 
     @Override
-    public void delete(Categoria categoria){
+    public void delete(Long id){
 
+        Categoria categoria = findById(id).get();
         categoriaRepository.delete(categoria);
 
     }

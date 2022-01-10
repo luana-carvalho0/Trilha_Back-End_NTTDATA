@@ -60,7 +60,17 @@ public class LancamentoController {
     }
 
 
-
+//    @PostMapping
+//    public ResponseEntity<Object> create(@RequestBody Lancamento lancamento){
+//
+//        if(lancamentoService.validateCategoryById(lancamento.getCategoryId().getId())) {
+//            return ResponseEntity.ok(lancamentoRepository.save(lancamento));
+//        }else{
+//            System.out.println("Não existe essa categoria");
+//        }
+//
+//        return ResponseEntity.ok(HttpStatus.OK);
+//    }
 
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody LancamentoSalvarDto dto){
@@ -83,9 +93,9 @@ public class LancamentoController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public void delete(@RequestBody Lancamento lancamento){
+    public void delete(@PathVariable Long id){
 
-        lancamentoService.delete(lancamento);
+        lancamentoService.delete(id);
 
     }
 

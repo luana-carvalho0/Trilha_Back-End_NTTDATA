@@ -55,9 +55,9 @@ public class CategoriaController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public void delete(@RequestBody Categoria categoria){
+    public void delete(@PathVariable Long id){
 
-        categoriaService.delete(categoria);
+        categoriaService.delete(id);
 
     }
 
