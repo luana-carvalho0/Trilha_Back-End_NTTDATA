@@ -607,3 +607,294 @@ R: Era preciso “startar” o MockMvc, por isso estava dando erro de NullPointe
 <img src="https://ik.imagekit.io/j5g11jplqm5/Captura_de_Tela__56__CqeKusUtdiW.png?updatedAt=1641232874073">
 </p>
 
+<h3 >
+    🎯 Desafio 14<br>
+</h3>
+
+<p>
+
+a) Desafio 1 - Git:
+
+I. Dê 2 exemplos de situações onde é necessário utilizar merge:
+
+R: No trabalho em equipe, para fazer a comparação e evitar conflitos.
+
+II. Com qual objetivo realizamos o commit?
+
+R:  Um commit serve como um ponto de retorno no projeto. O Git possui ferramentas que possibilitam acessar o projeto exatamente como ele estava quando cada commit foi feito. Isso traz várias vantagens, como dar mais segurança para fazer modificações no sistema (afinal, se a mudança estiver incorreta, é possível reverter o commit e voltar o código do projeto para como ele estava antes do commit ser feito) ou facilitar na correção de bugs, pois é possível executar o projeto localmente em um commit anterior à introdução de algum bug específico no código.
+
+III. Qual a diferença entre: git add -all git add -u git add -A git add .
+
+R: git add -all -> Coloca todos arquivos (novos, modificados e removidos) no index/stage
+git add -u -> Coloca no Stage apenas arquivos modificados e removidos
+git add . -A -> Coloca todos arquivos (novos, modificados e removidos) no index/stage.
+git add . -> Coloca todos arquivos (novos, modificados e removidos) no index/stage.
+
+IV. Qual é a ordem dos comandos para subir novas atualizações, verificando se existem alterações a serem recebidas?
+
+R: git diff, git add ., git commit -m “”, git push -u origin nomeDaBranch.
+
+V. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 1? Se não, justifique;
+
+R: Sim
+
+b) Desafio 2 - POO e Entity:
+
+I. Qual é a finalidade da camada Entity?
+
+R: Definir propriedades, métodos e atributos dos nossos objetos.
+
+II. Para você, por que acha que seguimos a programação orientada a objetos?
+
+R: Pois é um tipo de programação muito eficiente, robusto, facilitador, nos permite trazer mais segurança ao código.
+
+III. Qual é o ideal por trás de utilizar os métodos getters e setters?
+
+R: Para encapsular os objetos.
+
+IV. Qual o propósito de um construtor em uma classe? Podemos criar uma classe sem construtor?
+
+R: O construtor determina quais ações devem ser executadas quando vai ocorrer a criação de um objeto. Toda classe tem pelo menos um construtor definido, se nenhum construtor foi definido pelo desenvolvedor da classe, o compilador Java inclui um construtor padrão, que não recebe argumentos.
+
+V. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 2? Se não, justifique;
+
+R: Sim
+
+c) Desafio 3 - HTTP, REST e Controller:
+
+I. Qual é o objetivo da camada Controller?
+
+R: Intermediar requisições enviadas pelo View com as respostas fornecidas pelo Model.
+
+II. No que os padrões REST nos auxiliam?
+
+R:
+
+III. Quais métodos HTTP utilizamos para montar um CRUD?
+
+R: Create, Read, Update, Delete.
+
+IV. Qual a diferença entre as annotations @PathVariable, @RequestParam, @RequestBody? E com quais métodos HTTP elas podem ser utilizadas respectivamente?
+
+R: O @PathVariable é utilizado quando o valor da variável é passada diretamente na URL, mas não como um parâmetro, por outro lado, podemos ter vários parâmetros passados por url mas que não são parte da url em si, eles não são parte integrante da URL, por este motivo devem ser capturadas no controller utilizando @RequestParam. @RequestBody é para indicar ao Spring que um recurso não será enviado ou recebido por meio de uma página da Web.
+
+V. Para que serve ResponseEntity?
+
+R: ResponseEntity deve representar a resposta HTTP inteira. Você pode controlar tudo o que for necessário: código de status, cabeçalhos e corpo.
+
+VI. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 3? Se não, justifique;
+
+R: Sim.
+
+d) Desafio 4 - JPA e Repository:
+
+I. Qual é o propósito da camada Repository?
+
+R: Prover uma interface para tratar o armazenamento e recuperação de dados das entidades.
+
+II. De maneira prática como funciona a injeção do Repository? E qual a sua relação com @Autowired?
+
+R: Injetamos a classe de persistência em outra classes para termos acesso aos dados da API, a injeção ocorre de maneira simples usando a anotação @Autowired, que serve para marcar pontos de injeção dentro da classe.
+
+III. Quais são as facilidades em utilizar JPA?
+
+R: JPA além de ser um framework leve, também oferece diversas funcionalidades essenciais em qualquer aplicação corporativa, como capacidade de mapeamento, consultas dinâmicas, integração, testes, entre outras.
+
+IV. Quais são os passos para configurar um banco de dados em um projeto Spring?
+
+R: Depois de criado o projeto com uma classe repository que estende o JPA, vamos em um arquivo chamado application.properties e configuramos um banco escolhido anteriormente dentro desse arquivo, configuramos um username, password, url e o driver.
+
+V. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 4? Se não, justifique;
+
+R: Sim.
+
+e) Desafio 5 - Service:
+
+I. Qual é a finalidade da camada Service?
+
+R: A camada Service serve para inserirmos toda a lógica da nossa aplicação.
+
+II. Qual o sentido de um método ter apenas um propósito?
+
+R: Manter a clareza, melhorar escopo e organização do código.
+
+III. Qual a diferença entre um método void e métodos tipados?
+
+R: Um método void não tem nenhum tipo de retorno, enquanto os métodos tipados tem que necessariamente retornar algo.
+
+IV. É normal um serviço chamar outro?
+
+R: Sim.
+
+V. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 5? Se não, justifique;
+
+R: Sim.
+
+f) Desafio 6 - DTO:
+
+I. Quais problemas conseguimos resolver utilizando a camada DTO?
+
+R: Encapsulamento de dados, esconder de clientes informações sigilosas.
+
+II. Qual a diferença de realizarmos o “de para” utilizando constructor ou getters e setters?
+
+R:
+
+III. No que a utilização do Mapper nos auxilia? Achou fácil a implementação?
+
+R: Nos ajuda a mapear os dados das entidades para o DTO; sim.
+
+IV. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 6? Se não, justifique;
+
+R: Sim.
+
+g) Desafio 7 - Manipulação de dados:
+
+I. Qual é a forma de validar os dados de uma requisição sem utilizar @Valid?
+
+R: Implementando métodos de validação.
+
+II. Para que serve um ENUM? Cite exemplos;
+
+R: São tipos de campos que consistem em um conjunto fixo de constantes (static final), sendo como uma lista de valores pré-definidos. Se você usar enumerações em vez de números inteiros (ou códigos de Cadeia de Caracteres), aumentará a verificação em tempo de compilação e evitará erros de transmitir constantes inválidas e documentará quais valores são legais para usar. Por exemplo, escolher cartas em um baralho, definindo as contantes das cartas previamente, evitará de o programa me retornar uma constante inválida.
+
+III. Como criamos um custom validator? E qual o objetivo de criar um?
+
+R: O primeiro passo é criar uma anotação para marcar o atributo para validação e configurar algumas propriedades.Após criado a anotação para invocar a validação, é preciso implementar regra de validação, que é feita em uma classe concreta que foi referenciada na anotação @Constraint. A classe de validação implementa ConstraintValidator e precisa sobrescrever o método isValid, que o método que vai considerar se o valor recebido através do parâmetro value é valido ou não. Finalizado as implementações, agora é apenas utilizar a anotação no atributo desejado. Usamos o CustomValidator controle para fornecer uma função de validação definida pelo usuário para um controle de entrada. O CustomValidator controle é um controle separado do controle de entrada que ele valida, o que permite que você controle onde a mensagem de validação é exibida.
+
+IV. Qual foi a diferença entre utilizar for e streams no desafio 6?
+
+R: Stream facilita muito a implementação, desde que você esteja com os conceitos bem fixados e entendidos na mente. Mas depois de entendido o stream deixa o código menor e facilita muito a implementação.
+
+V. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 7? Se não, justifique;
+
+R: Sim.
+
+h) Desafio 8 - Tratamento de exceptions:
+
+I. Qual a finalidade de trata-las?
+
+R: Tratar a ocorrência de condições que alteram o fluxo normal da execução de programas.
+
+II. Como as descobrimos?
+
+R: Através de erros.
+
+III. Como fazemos para estourar um exception em uma determinada linha?
+
+R: Fazendo testes que dão erro, por exemplo em uma ArithmeticException tentar dividir um número por zero, vai extourar a exception.
+
+IV. Qual é a melhor forma de implementarmos nosso controle de exceções?
+
+R: Criando classes para tratamento de exceções.
+
+V. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 8? Se não, justifique;
+
+R: Sim.
+
+i) Desafio 9 - Patterns, SOLID e Arquitetura:
+
+I. O que é Singleton Pattern?
+
+R: Singleton especifica que apenas uma instância da classe pode existir, e esta será utilizada por toda a aplicação. Dessa forma temos apenas um ponto de acesso central a esta instância da classe.
+
+II. O que significa a letra D de SOLID e como se aplica na camada de Repository?
+
+R:  Dependency Inversion Principle: Princípio da Inversão de Dependência — Dependa de abstrações e não de implementações.
+
+III. Qual o objetivo das camadas?
+
+R: Atribuir responsabilidades únicas para cada camada, assim fica mais fácil dar manutenção ao código.
+
+IV. Qual arquitetura é melhor DDD, Hexagonal ou Clean?
+
+R: DDD
+
+V. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 9? Se não, justifique;
+
+R: Sim
+
+j) Desafio 10 - Spring:
+
+I. Qual a diferença entre Java e Spring?
+
+R: Java é a linguagem de programação, Spring é o framework para a plataforma Java.
+
+II. É possível utilizar Spring Data sozinho?
+
+R: Não.
+
+III. É possível utilizar Spring Boot, Spring Data e Spring Security em apenas um projeto? Se sim, como é feito a integração?
+
+R: Sim, basta inserir as dependências do Spring Data e Spring Security no pom.xml do projeto Spring Boot.
+
+IV. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 10? Se não, justifique;
+
+R: Sim
+
+k) Desafio 11 - Libs:
+
+I. Cite 5 libs que utilizou durante a trilha e suas respectivas funcionalidades;
+
+R: springfox-swagger-ui - para fazer a documentação do projeto
+h2 - para utilizar o banco de dados.
+mapstruct - para mapear os dtos
+jakarta.validation-api - para fazer a validação dos dados
+junit - para fazer testes unitários no projeto.
+
+
+II. Qual a diferença entre uma lib e um driver?
+
+R: Driver: É basicamente um arquivo jar que contêm os meios para fazer a comunicação com o banco de dados.
+Biblioteca: É um conjunto de classes e interfaces que facilitam e agilizam o desenvolvimento de sistema utilizando códigos prontos de terceiros.
+
+III. Existe limite de libs por projeto?
+
+R: Não
+
+IV. Por que utilizar um gerenciador de dependências?
+
+R: Pois eles gerenciam todas as ações com relação as dependências do projeto: listagem, adição, remoção e atualização. Além de analisar o grafo de dependência e garantir que as dependências dos pacotes utilizados no projeto também sejam obtidas, assim, facilitando demais a vida do desenvolvedor.
+
+V. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 11? Se não, justifique;
+
+R: Sim
+
+l) Desafio 12 - Testes unitários:
+
+I. Por que DEVOPS exige uma porcentagem de cobertura mínima nos projetos?
+
+II. Qual o objetivo de utilizar Mockito? Dê um exemplo;
+
+III. O que é o Sonar? E qual é o seu papel?
+
+IV. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 12? Se não, justifique;
+
+R: Sim
+
+m) Desafio 13 - Integração:
+
+I. Como foi o processo de integração?
+R: Simples, porém teve alguns erros no front-end que tiveram que ser ajustados.
+
+II. Quais foram as principais dificuldades?
+
+R: Fazer alterações no front.
+
+III. Obteve algum erro de CORS?
+
+R: Sim, tive que configurar o CORS no config do projeto.
+
+IV. O que é CORS?
+
+R: É um mecanismo utilizado pelos navegadores para compartilhar recursos entre diferentes origens. O CORS é uma especificação do W3C e faz uso de headers do HTTP para informar aos navegadores se determinado recurso pode ser ou não acessado.
+
+V. Você conseguiu adquirir os conhecimentos transmitidos durante o desafio 13? Se não, justifique;
+
+R: Sim
+
+
+
+
+</p>
+
