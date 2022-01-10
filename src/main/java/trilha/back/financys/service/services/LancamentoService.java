@@ -24,7 +24,7 @@ public interface LancamentoService {
 
     public Lancamento atualizarLancamento(Long id, Lancamento lancamento);
 
-    void delete(Lancamento lancamento);
+    void delete(Long id);
 
     public List<Lancamento> filter(String lancamento, String amount, boolean paid);
 

@@ -18,5 +18,5 @@ public interface CategoriaService {
 
     Categoria atualizarCategoria(Long id, Categoria categoria);
 
-    void delete(Categoria categoria);
+    void delete(Long id);
 }

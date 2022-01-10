@@ -100,7 +100,9 @@ public class LancamentoServiceImpl implements LancamentoService {
     }
 
     @Override
-    public void delete(Lancamento lancamento) {
+    public void delete(Long id) {
+
+        Lancamento lancamento = findById(id).get();
         lancamentoRepository.delete(lancamento);
     }
 
